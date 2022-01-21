@@ -1,15 +1,26 @@
-import {Box, Heading} from "@chakra-ui/react";
+import {Box, Flex, Heading} from "@chakra-ui/react";
 
 import Nav from "./Nav";
 import Media from "./Media";
 function Header() {
   return (
     <header>
-      <Box>
-        <Heading>FlóBlog</Heading>
+      <Box bg="primary.light">
+        <Flex
+          alignItems={"center"}
+          justifyContent={"space-between"}
+          margin={"0 auto"}
+          maxW={"1500px"}
+        >
+          <Box>
+            <Heading fontWeight={"extrabold"} id="headerTitle">
+              FLÓBLOG
+            </Heading>
+          </Box>
+          <Nav />
+          <Media />
+        </Flex>
       </Box>
-      <Nav />
-      <Media />
     </header>
   );
 }

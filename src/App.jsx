@@ -2,6 +2,9 @@ import {useState} from "react";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import {ChakraProvider} from "@chakra-ui/react";
 
+import "./App.css";
+import theme from "../Theme";
+
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import About from "./components/about/About";
@@ -11,7 +14,7 @@ import Home from "./components/Home/Home";
 function App() {
   return (
     <BrowserRouter>
-      <ChakraProvider>
+      <ChakraProvider theme={theme}>
         <Header />
         <Routes>
           <Route element={<Home />} path="/" />
