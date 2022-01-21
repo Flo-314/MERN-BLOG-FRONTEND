@@ -5,7 +5,7 @@ import Media from "./Media";
 function Header() {
   return (
     <header>
-      <Box bg="primary.light">
+      <Box bg="primary.light" padding={(0, 10)}>
         <Flex
           alignItems={"center"}
           justifyContent={"space-between"}
@@ -14,7 +14,7 @@ function Header() {
         >
           <Box>
             <Heading fontWeight={"extrabold"} id="headerTitle">
-              FLÓBLOG
+              <a href="/">FLÓBLOG</a>
             </Heading>
           </Box>
           <Nav />

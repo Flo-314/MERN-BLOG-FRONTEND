@@ -3,7 +3,7 @@ import {Box, Button, Flex, Heading, Image, Text} from "@chakra-ui/react";
 function FeaturedSection() {
   return (
     <section id="FeaturedArticles">
-      <Flex>
+      <Flex bg={"white"} paddingTop="150 ">
         <Heading>Featured Articles </Heading>
         <hr />
         <Flex>

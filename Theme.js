@@ -11,6 +11,7 @@ const theme = extendTheme({
     },
     text: {
       gray: "#E0E0E0",
+      grayer: "#A6A3A2",
     },
   },
 });

@@ -5,12 +5,8 @@ import PresentationSection from "./PresentationSection";
 function Home() {
   return (
     <main>
-      <Box bg={"primary.light"}>
-        <Box margin={"0 auto"} maxW={"1500px"}>
-          <PresentationSection />
-          <FeaturedSection />
-        </Box>
-      </Box>
+      <PresentationSection />
+      <FeaturedSection />
     </main>
   );
 }
