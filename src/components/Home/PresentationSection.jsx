@@ -11,7 +11,7 @@ function Presentation() {
               Blog para complementar la REST API de Express.js y mongoDB
             </Text>
             <Heading fontSize={55} fontWeight={"black"} paddingBottom={7} paddingTop={3}>
-              Un blog para apuntarse un poroto al porfolio
+              Un Blog para apuntarse un poroto al Portfolio
             </Heading>
             <Text paddingBottom={10}>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet dignissimos fugit,

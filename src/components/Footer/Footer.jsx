@@ -1,14 +1,25 @@
 import {Box, Button, Flex, Heading, Image, Text} from "@chakra-ui/react";
+import {LogoGithubIcon} from "chakra-ui-ionicons";
 
 function Footer() {
   return (
     <footer>
-      <Box bg={"secondary.strong"}>
-        <Flex direction={"column"} margin={"0 auto"} maxW={"1500px"}>
-          <Heading>FlóBlog</Heading>
+      <Box bg={"secondary.light"}>
+        <Flex
+          alignItems={"center"}
+          color={"white"}
+          direction={"column"}
+          justify={"center"}
+          margin={"0 auto"}
+          maxW={"1500px"}
+          paddingTop={200}
+        >
+          <Heading id="footerTitle" margin={"0 auto"}>
+            FLÓBLOG
+          </Heading>
           <nav>
             <ul>
-              <Flex>
+              <Flex fontSize={23} gap={10} paddingBottom={7} paddingTop={7}>
                 <li>
                   <a href="/">Home</a>
                 </li>
@@ -21,11 +32,14 @@ function Footer() {
               </Flex>
             </ul>
           </nav>
-          <Box>
-            <Text>
-              Blog create to complement the Rest api that i made.{" "}
-              <a href="https://github.com/Flo-314"> My Github</a>
-            </Text>
+          <hr />
+          <Box alignSelf={"flex-start"} paddingBottom={10} paddingTop={10}>
+            <Text fontWeight={"black"}>Blog create to complement the Rest api that i made. </Text>
+            <a href="https://github.com/Flo-314">
+              <Text fontSize={25} fontWeight={"bold"}>
+                My Github <LogoGithubIcon />
+              </Text>
+            </a>
           </Box>
         </Flex>
       </Box>

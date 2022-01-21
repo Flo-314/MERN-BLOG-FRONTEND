@@ -8,6 +8,7 @@ const theme = extendTheme({
     secondary: {
       strong: "#D19163",
       lighty: "#F7F3F0",
+      light: "#C9A285",
     },
     text: {
       gray: "#E0E0E0",
