@@ -1,11 +1,13 @@
+import {Box, Heading} from "@chakra-ui/react";
+
 import Nav from "./Nav";
 import Media from "./Media";
 function Header() {
   return (
     <header>
-      <div id="title">
-        <h1>Flo Blog</h1>
-      </div>
+      <Box>
+        <Heading>FlóBlog</Heading>
+      </Box>
       <Nav />
       <Media />
     </header>
