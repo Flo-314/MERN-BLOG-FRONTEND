@@ -1,31 +1,20 @@
-import {Flex, Heading, Box, Text, Image} from "@chakra-ui/react";
+import {Flex, Heading, Box} from "@chakra-ui/react";
+import {v4 as uuid} from "uuid";
 
-function LatestsArticles() {
+import LatestArticle from "./LatestArticle";
+
+function LatestsArticles({Posts}) {
   return (
     <section id="LatestsArticles">
       <Box bg={"white"} width={"100%"}>
-        <Flex margin={"0 auto"} maxW={"1500px"} width={"80%"}>
+        <Flex direction={"column"} margin={"0 auto"} maxW={"1500px"} width={"80%"}>
           <Heading>Latest Articles</Heading>
-          <hr />
-          <Flex direction={"column"}>
-            <Flex className="LatestsArticles" direction={"column"}>
-              <Box className="TopLatestsArticle">
-                <Image className="LatestsArticleImage" />
-              </Box>
-              <Box className="bottomLatestsArticle">
-                <Text className="LatestsArticleTitle" />
-                <Text className="LatestArticleParagraph" />
-                <Box className="latestArticleInfo">
-                  <Flex>
-                    <Image className="ProfileImg" />
-                    <Text className="LatestArticleAuthor" />
-                  </Flex>
-                  <Text className="LatestsArticleDate" />
-                  <Text className="latestArticleComments" />
-                </Box>
-              </Box>
-            </Flex>
-          </Flex>
+          <hr className="strongLine" />
+          <Flex direction={"column"} />
+          {Posts !== undefined &&
+            Posts.map((post) => {
+              return <LatestArticle key={uuid()} Post={post} />;
+            })}
         </Flex>
       </Box>
     </section>
