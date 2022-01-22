@@ -36,9 +36,7 @@ header {
   box-shadow: 0 16px 48px rgb(0 0 0 / 15%);
 
 }
-.featuredArticlee + .featuredArticlee + .featuredArticlee{
-justify-self: flex-end;
-}
+
 .strongLine{
   background-color: #D19163;
   height: 6px;
@@ -62,9 +60,7 @@ justify-self: flex-end;
   grid-template-rows: 1fr 1fr 1fr !important;
   justify-items: center;
 }
-.featuredArticlee + .featuredArticlee + .featuredArticlee{
-  justify-self: inherit;
-  }
+
 }
 
 

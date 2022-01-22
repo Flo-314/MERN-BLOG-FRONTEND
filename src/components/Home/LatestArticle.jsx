@@ -43,13 +43,13 @@ function LatestArticle({Post}) {
           <Box>
             <Image className="LatestArticleImage" />
             <Text className="LatestArticleAuthor">
-              By <Link>JULIAN EL BLOGUERO </Link>{" "}
+              By <Link fontWeight={900}>JULIAN EL BLOGUERO </Link>{" "}
             </Text>
             <Text className="LatestArticleDate" color={"text.grayer"} marginBottom={5}>
               {/* {Post.timestamp} */}Aug 24, 2020
             </Text>
             <Text className="LatestArticleComments">
-              <Link>22 comments </Link>
+              <Link fontWeight={600}>22 comments </Link>
             </Text>
           </Box>
         </Box>
