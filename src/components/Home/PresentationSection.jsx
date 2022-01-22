@@ -5,7 +5,14 @@ function Presentation() {
   return (
     <section id="presentationSection">
       <Box bg={"primary.light"} width={"100%"}>
-        <Flex gap={20} margin={"0 auto"} maxW={"1500px"} padding={(15, 0)}>
+        <Flex
+          className="ColumnMobile"
+          gap={20}
+          margin={"0 auto"}
+          maxW={"1500px"}
+          paddingTop={10}
+          width={"80%"}
+        >
           <Flex direction={"column"} marginTop="5em">
             <Text color={"text.grayer"} fontSize={18}>
               Blog para complementar la REST API de Express.js y mongoDB
@@ -27,6 +34,7 @@ function Presentation() {
                 maxH="3.5em"
                 maxW="320px"
                 minW="250px"
+                position={"inherit"}
               >
                 Read More
               </Button>
@@ -34,7 +42,13 @@ function Presentation() {
           </Flex>
 
           <Flex marginTop="2em">
-            <Image borderRadius={20} height={"110%"} src="../images/hireme.webp" width={"100%"} />
+            <Image
+              borderRadius={20}
+              height={"110%"}
+              maxHeight={"1100px"}
+              src="../images/hireme.jpeg"
+              width={"100%"}
+            />
           </Flex>
         </Flex>
       </Box>

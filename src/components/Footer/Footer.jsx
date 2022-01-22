@@ -1,4 +1,4 @@
-import {Box, Button, Flex, Heading, Image, Text} from "@chakra-ui/react";
+import {Box, Flex, Heading, Text} from "@chakra-ui/react";
 import {LogoGithubIcon} from "chakra-ui-ionicons";
 
 function Footer() {
@@ -13,6 +13,7 @@ function Footer() {
           margin={"0 auto"}
           maxW={"1500px"}
           paddingTop={200}
+          width={"80%"}
         >
           <Heading id="footerTitle" margin={"0 auto"}>
             FLÓBLOG

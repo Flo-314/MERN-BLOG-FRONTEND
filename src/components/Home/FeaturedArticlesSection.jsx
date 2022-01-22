@@ -4,17 +4,17 @@ function FeaturedSection() {
   return (
     <section id="FeaturedArticles">
       <Box bg={"white"} marginTop={10} paddingTop="250">
-        <Flex margin={"0 auto"} maxW={"1500px"}>
+        <Flex margin={"0 auto"} maxW={"1500px"} width={"80%"}>
           <Heading>Featured Articles </Heading>
           <hr />
           <Flex>
             <Flex className="featuredArticle">
-              <Box class="TopFeaturedArticle">
+              <Box className="TopFeaturedArticle">
                 <Image className="featuredArticleImage" />
               </Box>
-              <Box class="bottomFeaturedArticle">
-                <Text class="featuredArticleTitle" />
-                <Text class="featuredArticleDate" />
+              <Box className="bottomFeaturedArticle">
+                <Text className="featuredArticleTitle" />
+                <Text className="featuredArticleDate" />
               </Box>
             </Flex>
           </Flex>
