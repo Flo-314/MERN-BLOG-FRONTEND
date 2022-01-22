@@ -34,7 +34,7 @@ function FeaturedArticle({Post}) {
           >
             {/* {Post.category} */} Travel
           </Button>
-          <Text className="featuredArticleTitle" fontSize={17} fontWeight={"bold"} marginBottom={5}>
+          <Text className="featuredArticleTitle" fontSize={20} fontWeight={"bold"} marginBottom={5}>
             {/* {Post.title} */}
             <a href="">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. pore explicabo, dolorum non

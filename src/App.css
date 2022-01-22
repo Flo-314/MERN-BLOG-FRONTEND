@@ -32,7 +32,7 @@ header {
   display: none !important;
 }
 
-.featuredArticle{
+.featuredArticle, .LatestArticle{
   box-shadow: 0 16px 48px rgb(0 0 0 / 15%);
 
 }

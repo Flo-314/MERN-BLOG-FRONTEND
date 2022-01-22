@@ -7,14 +7,27 @@ function LatestsArticles({Posts}) {
   return (
     <section id="LatestsArticles">
       <Box bg={"white"} width={"100%"}>
-        <Flex direction={"column"} margin={"0 auto"} maxW={"1500px"} width={"80%"}>
+        <Flex
+          direction={"column"}
+          margin={"0 auto"}
+          maxW={"1500px"}
+          paddingBottom={20}
+          width={"80%"}
+        >
           <Heading>Latest Articles</Heading>
           <hr className="strongLine" />
-          <Flex direction={"column"} />
-          {Posts !== undefined &&
-            Posts.map((post) => {
-              return <LatestArticle key={uuid()} Post={post} />;
-            })}
+          <Flex
+            alignItems={"center"}
+            direction={"column"}
+            gap={20}
+            justify={"center"}
+            marginTop={10}
+          >
+            {Posts !== undefined &&
+              Posts.map((post) => {
+                return <LatestArticle key={uuid()} Post={post} />;
+              })}
+          </Flex>
         </Flex>
       </Box>
     </section>
