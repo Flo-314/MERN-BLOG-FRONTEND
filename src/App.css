@@ -42,12 +42,13 @@ header {
   .hiddenMobile {
     display: inherit !important;
   }
+  .ColumnMobile{
+    flex-direction: column;
+}
 }
 
 
 @media (max-width: 550px){
-.ColumnMobile{
-    flex-direction: column;
-}
+
 
 }

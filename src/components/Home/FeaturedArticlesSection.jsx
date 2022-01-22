@@ -1,23 +1,24 @@
-import {Box, Button, Flex, Heading, Image, Text} from "@chakra-ui/react";
+import {Box, Flex, Heading, Grid, GridItem} from "@chakra-ui/react";
+import {v4 as uuid} from "uuid";
 
-function FeaturedSection() {
+import FeaturedArticle from "./FeaturedArticle";
+function FeaturedSection({Posts}) {
   return (
     <section id="FeaturedArticles">
       <Box bg={"white"} marginTop={10} paddingTop="250">
-        <Flex margin={"0 auto"} maxW={"1500px"} width={"80%"}>
+        <Flex direction={"column"} margin={"0 auto"} maxW={"1500px"} width={"80%"}>
           <Heading>Featured Articles </Heading>
           <hr />
-          <Flex>
-            <Flex className="featuredArticle">
-              <Box className="TopFeaturedArticle">
-                <Image className="featuredArticleImage" />
-              </Box>
-              <Box className="bottomFeaturedArticle">
-                <Text className="featuredArticleTitle" />
-                <Text className="featuredArticleDate" />
-              </Box>
-            </Flex>
-          </Flex>
+          <Grid templateColumns="repeat(3, 1fr)" templateRows="1fr" width={"100%"}>
+            {Posts !== undefined &&
+              Posts.map((post) => {
+                return (
+                  <GridItem key={uuid()}>
+                    <FeaturedArticle Post={post} />
+                  </GridItem>
+                );
+              })}
+          </Grid>
         </Flex>
       </Box>
     </section>
