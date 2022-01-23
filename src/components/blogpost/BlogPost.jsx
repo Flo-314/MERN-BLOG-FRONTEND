@@ -22,7 +22,7 @@ function BlogPost() {
 
   return (
     <main>
-      <Box maxW={"1500px"} minH={"80vh"} width="80%">
+      <Box maxW={"1500px"} width="80%">
         <section id="post">{Post !== undefined && <PostComponent Post={Post} />}</section>
       </Box>
     </main>
