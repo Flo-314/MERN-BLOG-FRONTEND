@@ -6,7 +6,6 @@ export default async function fetchPosts() {
     const posts = await data.json();
 
     return posts;
-    console.log(data);
   } catch (err) {
     console.log(err);
   }

@@ -1,31 +1,31 @@
 import {Box, Link, Image, Text, Grid, Button, GridItem} from "@chakra-ui/react";
 import {Link as RouteLink} from "react-router-dom";
-function LatestArticle({Post}) {
+
+function BlogPost({Post}) {
   return (
     <Grid
       className="LatestArticle"
       direction={"column"}
       maxHeight={"100%"}
-      maxWidth="1250px"
+      maxWidth=""
       templateColumns="1fr"
       templateRows="13fr 6fr"
     >
-      <GridItem className="TopLatestArticle">
+      <GridItem className="TopArticle">
         <Image
           borderRadius={15}
-          className="LatestArticleImage"
+          className="ArticleImage"
           height={"100%"}
-          maxHeight="655px"
           src={"" /* Post.image */ /*.src*/}
           width="100%"
         />
       </GridItem>
-      <GridItem bg="white" className="bottomLatestArticle">
+      <GridItem bg="white" className="bottomArticle">
         <Box padding={7} paddingBottom={0}>
           <Button
             bg={"primary.light"}
             borderRadius={10}
-            className="LatestArticleCategory"
+            className="ArticleCategory"
             color={"secondary.strong"}
             fontWeight={900}
             marginBottom={5}
@@ -34,25 +34,25 @@ function LatestArticle({Post}) {
           >
             {Post.category}
           </Button>
-          <Text className="LatestArticleTitle" fontSize={30} fontWeight={"bold"} marginBottom={5}>
+          <Text className="ArticleTitle" fontSize={30} fontWeight={"bold"} marginBottom={5}>
             <Link as={RouteLink} to={"/posts/" + Post.title}>
               {Post.title}
             </Link>
           </Text>
 
           <Box>
-            <Image className="LatestArticleImage" />
-            <Text className="LatestArticleAuthor">
+            <Image className="ArticleImage" />
+            <Text className="ArticleAuthor">
               By
               <Link as={RouteLink} fontWeight={900} to={"/writers/" + Post.user.username}>
                 {Post.user.username}
               </Link>
             </Text>
 
-            <Text className="LatestArticleDate" color={"text.grayer"} marginBottom={5}>
+            <Text className="ArticleDate" color={"text.grayer"} marginBottom={5}>
               {Post.timestamp}
             </Text>
-            <Text className="LatestArticleComments" marginBottom={5}>
+            <Text className="ArticleComments" marginBottom={5}>
               <Link as={RouteLink} fontWeight={600} to={"/posts/" + Post.title}>
                 {Post.comments /* length */} comments
               </Link>
@@ -64,4 +64,4 @@ function LatestArticle({Post}) {
   );
 }
 
-export default LatestArticle;
+export default BlogPost;
