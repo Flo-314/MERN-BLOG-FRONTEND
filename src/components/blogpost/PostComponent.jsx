@@ -2,11 +2,6 @@ import {Box, Image, Text, Flex, Heading} from "@chakra-ui/react";
 import ReactHtmlParser from "react-html-parser";
 
 function PostComponent({Post}) {
-  console.log(Post);
-  function createMarkup() {
-    return {__html: Post.content};
-  }
-
   return (
     <Flex alignItems={"center"} direction={"column"} marginBottom={20} marginTop={20}>
       <Box>
