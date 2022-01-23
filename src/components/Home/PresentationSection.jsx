@@ -28,7 +28,7 @@ function Presentation() {
               architecto velit, porro laborum optio, quibusdam debitis iusto sequi dolorum assumenda
               necessitatibus accusantium quisquam eum ex sit quidem doloribus.
             </Text>
-            <Link as={RouteLink} to={"blog/posts/Un Blog para apuntarse un poroto al Portfolio"}>
+            <Link as={RouteLink} to={"posts/Un Blog para apuntarse un poroto al Portfolio"}>
               <Button
                 bg={"primary.light"}
                 border="2px"
