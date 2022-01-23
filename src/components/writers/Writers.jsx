@@ -27,6 +27,7 @@ function Writers() {
           gap={20}
           margin={"0 auto"}
           maxW={"1500px"}
+          paddingBottom={10}
           paddingTop={10}
           width={"80%"}
         >
@@ -34,14 +35,14 @@ function Writers() {
             direction={"column"}
             gap={20}
             padding={20}
-            templateColumns="1fr 1fr 1fr "
+            templateColumns="1fr 1fr 1fr"
             templateRows="auto"
             width="100%"
           >
             {Writers !== undefined &&
               Writers.map((writer) => {
                 return (
-                  <GridItem key={uuid()} maxHeight="650px">
+                  <GridItem key={uuid()} height="100%" maxHeight="650px">
                     <WriterCard Writer={writer} />
                   </GridItem>
                 );

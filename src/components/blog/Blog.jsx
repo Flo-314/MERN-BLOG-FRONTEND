@@ -22,26 +22,25 @@ function Blog() {
     <main>
       <Box bg={"primary.light"} width={"100%"}>
         <Flex
-          className="ColumnMobile"
+          className=""
           flexWrap={"wrap"}
-          gap={20}
+          justify={"center"}
           margin={"0 auto"}
           maxW={"1500px"}
-          paddingTop={10}
+          padding={20}
           width={"80%"}
         >
           <Grid
+            className="mobileGridRows"
             direction={"column"}
             gap={20}
-            padding={20}
-            templateColumns="1fr 1fr 1fr "
-            templateRows="auto"
-            width="100%"
+            maxHeight={"100%"}
+            templateColumns="1fr 1fr 1fr"
           >
             {Posts !== undefined &&
               Posts.map((post) => {
                 return (
-                  <GridItem key={uuid()} maxHeight="650px">
+                  <GridItem key={uuid()} height={"100%"} justifySelf={"stretch"} width={"100%"}>
                     <BlogPost Post={post} />
                   </GridItem>
                 );

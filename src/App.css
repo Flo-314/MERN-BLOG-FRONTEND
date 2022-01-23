@@ -30,7 +30,7 @@ header {
   display: none !important;
 }
 
-.featuredArticle, .LatestArticle{
+.featuredArticle, .LatestArticle, .boxShadow{
   box-shadow: 0 16px 48px rgb(0 0 0 / 15%);
 
 }
