@@ -1,5 +1,5 @@
 import {Box, Image, Text, Flex, Heading} from "@chakra-ui/react";
-import ReactHtmlParser, {processNodes, convertNodeToElement, htmlparser2} from "react-html-parser";
+import ReactHtmlParser from "react-html-parser";
 
 function PostComponent({Post}) {
   console.log(Post);
@@ -23,9 +23,9 @@ function PostComponent({Post}) {
         </Flex>
         <Image />
         <article>
-          <Text fontSize="16" fontWeight={600}>
+          <Box fontSize="16" fontWeight={600}>
             {ReactHtmlParser(Post.content)}
-          </Text>
+          </Box>
         </article>
       </Box>
     </Flex>
