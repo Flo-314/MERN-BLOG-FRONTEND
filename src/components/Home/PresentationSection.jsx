@@ -19,7 +19,7 @@ function Presentation() {
               Blog para complementar la REST API de Express.js y mongoDB
             </Text>
             <Heading fontSize={55} fontWeight={"black"} paddingBottom={7} paddingTop={3}>
-              <Link as={RouteLink} to={"/blog/Un Blog para apuntarse un poroto al Portfolio"}>
+              <Link as={RouteLink} to={"/posts/Un Blog para apuntarse un poroto al Portfolio"}>
                 Un Blog para apuntarse un poroto al Portfolio
               </Link>
             </Heading>
@@ -28,20 +28,20 @@ function Presentation() {
               architecto velit, porro laborum optio, quibusdam debitis iusto sequi dolorum assumenda
               necessitatibus accusantium quisquam eum ex sit quidem doloribus.
             </Text>
-            <Button
-              bg={"primary.light"}
-              border="2px"
-              borderColor="secondary.strong"
-              borderRadius={11}
-              maxH="3.5em"
-              maxW="320px"
-              minW="250px"
-              position={"inherit"}
-            >
-              <Link as={RouteLink} to={"posts/Un Blog para apuntarse un poroto al Portfolio"}>
+            <Link as={RouteLink} to={"blog/posts/Un Blog para apuntarse un poroto al Portfolio"}>
+              <Button
+                bg={"primary.light"}
+                border="2px"
+                borderColor="secondary.strong"
+                borderRadius={11}
+                maxH="3.5em"
+                maxW="320px"
+                minW="250px"
+                position={"inherit"}
+              >
                 Read More
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           </Flex>
 
           <Flex marginTop="2em">

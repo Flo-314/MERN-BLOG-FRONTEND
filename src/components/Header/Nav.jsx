@@ -56,7 +56,7 @@ function Nav() {
                     color={"primary.strong"}
                     fontSize={23}
                     fontWeight={"bold"}
-                    to={"/blog"}
+                    to={"/posts"}
                   >
                     Blog
                   </Link>
@@ -102,7 +102,7 @@ function Nav() {
           </li>
           <li>
             <h3>
-              <Link as={RouteLink} to={"/blog"}>
+              <Link as={RouteLink} to={"/posts"}>
                 Blog
               </Link>
             </h3>

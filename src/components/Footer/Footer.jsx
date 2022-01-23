@@ -30,7 +30,7 @@ function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link as={RouteLink} to={"/blog"}>
+                  <Link as={RouteLink} to={"/posts"}>
                     Blog
                   </Link>
                 </li>

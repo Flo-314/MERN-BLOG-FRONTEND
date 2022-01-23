@@ -37,7 +37,7 @@ function FeaturedArticle({Post}) {
             {Post.category}
           </Button>
           <Text className="featuredArticleTitle" fontSize={20} fontWeight={"bold"} marginBottom={5}>
-            <Link as={RouteLink} to={"/blog/" + Post.title}>
+            <Link as={RouteLink} to={"/posts/" + Post.title}>
               {Post.title}
             </Link>
           </Text>
