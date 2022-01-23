@@ -46,7 +46,7 @@ function Presentation() {
               borderRadius={20}
               height={"110%"}
               maxHeight={"1100px"}
-              src="../images/hireme.jpeg"
+              src="https://pbs.twimg.com/media/FJlInE-XoAgJzUH?format=jpg&name=4096x4096"
               width={"100%"}
             />
           </Flex>
