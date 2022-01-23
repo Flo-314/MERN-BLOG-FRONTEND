@@ -22,7 +22,6 @@ function Blog() {
     <main>
       <Box bg={"primary.light"} width={"100%"}>
         <Flex
-          className=""
           flexWrap={"wrap"}
           justify={"center"}
           margin={"0 auto"}

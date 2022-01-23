@@ -22,27 +22,24 @@ function Writers() {
     <main>
       <Box bg={"primary.light"} width={"100%"}>
         <Flex
-          className="ColumnMobile"
           flexWrap={"wrap"}
-          gap={20}
+          justify={"center"}
           margin={"0 auto"}
           maxW={"1500px"}
-          paddingBottom={10}
-          paddingTop={10}
+          padding={20}
           width={"80%"}
         >
           <Grid
+            className="mobileGridRows"
             direction={"column"}
             gap={20}
-            padding={20}
+            maxHeight={"100%"}
             templateColumns="1fr 1fr 1fr"
-            templateRows="auto"
-            width="100%"
           >
             {Writers !== undefined &&
               Writers.map((writer) => {
                 return (
-                  <GridItem key={uuid()} height="100%" maxHeight="650px">
+                  <GridItem key={uuid()} height={"100%"} justifySelf={"stretch"} width={"100%"}>
                     <WriterCard Writer={writer} />
                   </GridItem>
                 );

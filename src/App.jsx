@@ -11,6 +11,7 @@ import Blog from "./components/blog/Blog";
 import Writers from "./components/writers/Writers";
 import Home from "./components/Home/Home";
 import BlogPost from "./components/blogpost/BlogPost";
+import Writer from "./components/Writer/Writer";
 function App() {
   return (
     <BrowserRouter>
@@ -21,10 +22,9 @@ function App() {
           <Route element={<About />} path="/about" />
           <Route element={<Blog />} path="/posts" />
           <Route element={""} path="/posts/category/:id" />
-
           <Route element={<BlogPost />} path="/posts/:id" />
-
           <Route element={<Writers />} path="/writers" />
+          <Route element={<Writer />} path="/writers/:id" />
         </Routes>
         <Footer />
       </ChakraProvider>
