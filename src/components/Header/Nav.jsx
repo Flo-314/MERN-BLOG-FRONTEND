@@ -1,6 +1,7 @@
 import {Box, Flex, Link} from "@chakra-ui/react";
 import {Menu, MenuButton, MenuList, MenuItem, Button} from "@chakra-ui/react";
 import {ChevronDownIcon} from "chakra-ui-ionicons";
+import {Link as RouteLink} from "react-router-dom";
 
 function Nav() {
   return (
@@ -22,11 +23,12 @@ function Nav() {
               <MenuItem>
                 <h3>
                   <Link
+                    as={RouteLink}
                     className="primaryStrong"
                     color={"primary.strong"}
                     fontSize={23}
                     fontWeight={"bold"}
-                    href="/"
+                    to={"/"}
                   >
                     Home
                   </Link>
@@ -35,11 +37,12 @@ function Nav() {
               <MenuItem>
                 <h3>
                   <Link
+                    as={RouteLink}
                     className="primaryStrong"
                     color={"primary.strong"}
                     fontSize={23}
                     fontWeight={"bold"}
-                    href="/about"
+                    to={"/about"}
                   >
                     About
                   </Link>
@@ -48,13 +51,28 @@ function Nav() {
               <MenuItem>
                 <h3>
                   <Link
+                    as={RouteLink}
                     className="primaryStrong"
                     color={"primary.strong"}
                     fontSize={23}
                     fontWeight={"bold"}
-                    href="/blog"
+                    to={"/blog"}
                   >
                     Blog
+                  </Link>
+                </h3>
+              </MenuItem>
+              <MenuItem>
+                <h3>
+                  <Link
+                    as={RouteLink}
+                    className="primaryStrong"
+                    color={"primary.strong"}
+                    fontSize={23}
+                    fontWeight={"bold"}
+                    to={"/writers"}
+                  >
+                    Our Writers
                   </Link>
                 </h3>
               </MenuItem>
@@ -70,30 +88,30 @@ function Nav() {
         >
           <li>
             <h3>
-              <a className="primaryStrong" href="/">
+              <Link as={RouteLink} to={"/"}>
                 Home
-              </a>
+              </Link>
             </h3>
           </li>
           <li>
             <h3>
-              <a className="primaryStrong" href="/about">
+              <Link as={RouteLink} to={"/about"}>
                 About
-              </a>
+              </Link>
             </h3>
           </li>
           <li>
             <h3>
-              <a className="primaryStrong" href="/blog">
+              <Link as={RouteLink} to={"/blog"}>
                 Blog
-              </a>
+              </Link>
             </h3>
           </li>
           <li>
             <h3>
-              <a className="primaryStrong" href="/writers">
+              <Link as={RouteLink} to={"/writers"}>
                 Our Writers
-              </a>
+              </Link>
             </h3>
           </li>
         </Flex>

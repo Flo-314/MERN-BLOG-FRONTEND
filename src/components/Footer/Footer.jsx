@@ -1,5 +1,6 @@
-import {Box, Flex, Heading, Text} from "@chakra-ui/react";
+import {Box, Flex, Heading, Link, Text} from "@chakra-ui/react";
 import {LogoGithubIcon} from "chakra-ui-ionicons";
+import {Link as RouteLink} from "react-router-dom";
 
 function Footer() {
   return (
@@ -16,19 +17,27 @@ function Footer() {
           width={"80%"}
         >
           <Heading id="footerTitle" margin={"0 auto"}>
-            FLÓBLOG
+            <Link as={RouteLink} to={"/"}>
+              FLÓBLOG
+            </Link>
           </Heading>
           <nav>
             <ul>
               <Flex fontSize={23} gap={10} paddingBottom={7} paddingTop={7}>
                 <li>
-                  <a href="/">Home</a>
+                  <Link as={RouteLink} to={"/"}>
+                    Home
+                  </Link>
                 </li>
                 <li>
-                  <a href="/blog">Blog</a>
+                  <Link as={RouteLink} to={"/blog"}>
+                    Blog
+                  </Link>
                 </li>
                 <li>
-                  <a href="/about">About Us</a>
+                  <Link as={RouteLink} to={"/about"}>
+                    About Us
+                  </Link>
                 </li>
               </Flex>
             </ul>
@@ -36,11 +45,12 @@ function Footer() {
           <hr />
           <Box alignSelf={"flex-start"} paddingBottom={10} paddingTop={10}>
             <Text fontWeight={"black"}>Blog create to complement the Rest api that i made. </Text>
-            <a href="https://github.com/Flo-314">
-              <Text fontSize={25} fontWeight={"bold"}>
+
+            <Text fontSize={25} fontWeight={"bold"}>
+              <a href="https://github.com/Flo-314">
                 My Github <LogoGithubIcon />
-              </Text>
-            </a>
+              </a>
+            </Text>
           </Box>
         </Flex>
       </Box>

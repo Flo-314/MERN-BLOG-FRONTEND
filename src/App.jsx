@@ -10,7 +10,7 @@ import About from "./components/about/About";
 import Blog from "./components/blog/Blog";
 import Writers from "./components/writers/Writers";
 import Home from "./components/Home/Home";
-
+import BlogPost from "./components/blogpost/BlogPost";
 function App() {
   return (
     <BrowserRouter>
@@ -20,6 +20,7 @@ function App() {
           <Route element={<Home />} path="/" />
           <Route element={<About />} path="/about" />
           <Route element={<Blog />} path="/blog" />
+          <Route element={<BlogPost />} path="/blog/:id" />
           <Route element={<Writers />} path="/writers" />
         </Routes>
         <Footer />

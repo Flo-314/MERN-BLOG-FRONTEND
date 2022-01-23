@@ -1,4 +1,5 @@
-import {Box, Flex, Heading} from "@chakra-ui/react";
+import {Box, Flex, Heading, Link} from "@chakra-ui/react";
+import {Link as RouteLink} from "react-router-dom";
 
 import Nav from "./Nav";
 import Media from "./Media";
@@ -16,7 +17,9 @@ function Header() {
         >
           <Box>
             <Heading fontWeight={"extrabold"} id="headerTitle">
-              <a href="/">FLÓBLOG</a>
+              <Link as={RouteLink} to={"/"}>
+                FLÓBLOG
+              </Link>
             </Heading>
           </Box>
           <Nav />

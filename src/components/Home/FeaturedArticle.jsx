@@ -1,4 +1,5 @@
 import {Box, GridItem, Image, Text, Grid, Button, Link} from "@chakra-ui/react";
+import {Link as RouteLink} from "react-router-dom";
 
 function FeaturedArticle({Post}) {
   return (
@@ -36,8 +37,11 @@ function FeaturedArticle({Post}) {
             {Post.category}
           </Button>
           <Text className="featuredArticleTitle" fontSize={20} fontWeight={"bold"} marginBottom={5}>
-            <Link href={"/writers/" + Post.title}>{Post.title}</Link>
+            <Link as={RouteLink} to={"/blog/" + Post.title}>
+              {Post.title}
+            </Link>
           </Text>
+
           <Text className="featuredArticleDate" color={"text.grayer"} marginBottom={5}>
             {Post.timestamp}
           </Text>

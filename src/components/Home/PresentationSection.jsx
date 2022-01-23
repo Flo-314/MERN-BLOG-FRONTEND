@@ -1,5 +1,6 @@
-import {Box, Heading, Text, Button, Flex} from "@chakra-ui/react";
+import {Box, Heading, Text, Button, Flex, Link} from "@chakra-ui/react";
 import {Image} from "@chakra-ui/react";
+import {Link as RouteLink} from "react-router-dom";
 
 function Presentation() {
   return (
@@ -18,37 +19,41 @@ function Presentation() {
               Blog para complementar la REST API de Express.js y mongoDB
             </Text>
             <Heading fontSize={55} fontWeight={"black"} paddingBottom={7} paddingTop={3}>
-              Un Blog para apuntarse un poroto al Portfolio
+              <Link as={RouteLink} to={"/blog/Un Blog para apuntarse un poroto al Portfolio"}>
+                Un Blog para apuntarse un poroto al Portfolio
+              </Link>
             </Heading>
             <Text paddingBottom={10}>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet dignissimos fugit,
               architecto velit, porro laborum optio, quibusdam debitis iusto sequi dolorum assumenda
               necessitatibus accusantium quisquam eum ex sit quidem doloribus.
             </Text>
-            <a href="/blog/Un blog para apuntarse un poroto al porfolio">
-              <Button
-                bg={"primary.light"}
-                border="2px"
-                borderColor="secondary.strong"
-                borderRadius={11}
-                maxH="3.5em"
-                maxW="320px"
-                minW="250px"
-                position={"inherit"}
-              >
+            <Button
+              bg={"primary.light"}
+              border="2px"
+              borderColor="secondary.strong"
+              borderRadius={11}
+              maxH="3.5em"
+              maxW="320px"
+              minW="250px"
+              position={"inherit"}
+            >
+              <Link as={RouteLink} to={"posts/Un Blog para apuntarse un poroto al Portfolio"}>
                 Read More
-              </Button>
-            </a>
+              </Link>
+            </Button>
           </Flex>
 
           <Flex marginTop="2em">
-            <Image
-              borderRadius={20}
-              height={"110%"}
-              maxHeight={"1100px"}
-              src="https://pbs.twimg.com/media/FJlInE-XoAgJzUH?format=jpg&name=4096x4096"
-              width={"100%"}
-            />
+            <Link as={RouteLink} to={"posts/Un Blog para apuntarse un poroto al Portfolio"}>
+              <Image
+                borderRadius={20}
+                height={"110%"}
+                maxHeight={"1100px"}
+                src="https://pbs.twimg.com/media/FJlInE-XoAgJzUH?format=jpg&name=4096x4096"
+                width={"100%"}
+              />
+            </Link>
           </Flex>
         </Flex>
       </Box>

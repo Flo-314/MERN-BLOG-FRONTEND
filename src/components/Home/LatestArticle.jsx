@@ -1,5 +1,5 @@
 import {Box, Link, Image, Text, Grid, Button, GridItem} from "@chakra-ui/react";
-
+import {Link as RouteLink} from "react-router-dom";
 function LatestArticle({Post}) {
   return (
     <Grid
@@ -34,22 +34,25 @@ function LatestArticle({Post}) {
             {Post.category}
           </Button>
           <Text className="LatestArticleTitle" fontSize={30} fontWeight={"bold"} marginBottom={5}>
-            <Link href={"/writers/" + Post.title}>{Post.title}</Link>
+            <Link as={RouteLink} to={"/blog/" + Post.title}>
+              {Post.title}
+            </Link>
           </Text>
 
           <Box>
             <Image className="LatestArticleImage" />
             <Text className="LatestArticleAuthor">
-              By{" "}
-              <Link fontWeight={900} href={"/writers/" + Post.user.username}>
+              By
+              <Link as={RouteLink} fontWeight={900} to={"/writers/" + Post.user.username}>
                 {Post.user.username}
-              </Link>{" "}
+              </Link>
             </Text>
+
             <Text className="LatestArticleDate" color={"text.grayer"} marginBottom={5}>
               {Post.timestamp}
             </Text>
             <Text className="LatestArticleComments">
-              <Link fontWeight={600} href={"/writers/" + Post.title}>
+              <Link as={RouteLink} fontWeight={600} to={"/blog/" + Post.title}>
                 {Post.comments /* length */} comments
               </Link>
             </Text>
