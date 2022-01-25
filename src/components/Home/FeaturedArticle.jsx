@@ -18,7 +18,7 @@ function FeaturedArticle({Post}) {
           className="featuredArticleImage"
           height={"100%"}
           maxHeight="375px"
-          src={Post.image /*.src*/}
+          src={Post.image.src}
           width="100%"
         />
       </GridItem>

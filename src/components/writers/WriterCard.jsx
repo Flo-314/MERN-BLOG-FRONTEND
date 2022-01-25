@@ -9,7 +9,7 @@ function WriterCard({Writer}) {
           alt="WriterPhoto"
           borderRadius={20}
           height="100%"
-          src="https://pbs.twimg.com/media/FJlInE-XoAgJzUH?format=jpg&name=4096x4096"
+          src={Writer.image.src}
           width="100%"
         />
       </Box>

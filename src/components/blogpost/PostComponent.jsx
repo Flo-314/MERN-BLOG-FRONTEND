@@ -37,13 +37,13 @@ function PostComponent({Post}) {
           padding={"2"}
           width="fit-content"
         >
-          <Image borderRadius={10} src={"" /*Post.image.src*/} />
+          <Image borderRadius={10} src={Post.image.src} />
           <Box fontSize="18">
             <Text fontWeight={"bold"}>{Post.user.username}</Text>
             <Text fontWeight={"semibold"}>Editor</Text>
           </Box>
         </Flex>
-        <Image />
+        <Image src={Post.user.image.src} />
         <article>
           <Text dangerouslySetInnerHTML={createMarkup()} fontSize="16" fontWeight={600} />
         </article>

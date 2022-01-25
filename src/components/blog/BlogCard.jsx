@@ -15,9 +15,7 @@ function BlogPost({Post}) {
           borderRadius={15}
           className="ArticleImage"
           height="100%"
-          src={
-            "https://pbs.twimg.com/media/FJlInE-XoAgJzUH?format=jpg&name=4096x4096" /* Post.image */ /*.src*/
-          }
+          src={Post.image.src}
           width="100%"
         />
       </Box>
@@ -50,7 +48,7 @@ function BlogPost({Post}) {
           </Text>
         </Box>
         <Box justifySelf={"flex-end"}>
-          <Image className="ArticleImage" />
+          <Image className="ArticleImage" src={Post.user.image.src} />
           <Text className="ArticleAuthor">
             By
             <Link as={RouteLink} fontWeight={900} to={"/writers/" + Post.user.username}>

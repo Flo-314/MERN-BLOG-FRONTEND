@@ -1,6 +1,8 @@
 import {Box, Link, Image, Text, Grid, Button, GridItem} from "@chakra-ui/react";
 import {Link as RouteLink} from "react-router-dom";
 function LatestArticle({Post}) {
+  console.log(Post.user);
+
   return (
     <Grid
       className="LatestArticle"
@@ -16,7 +18,7 @@ function LatestArticle({Post}) {
           className="LatestArticleImage"
           height={"100%"}
           maxHeight="655px"
-          src={"" /* Post.image */ /*.src*/}
+          src={Post.image.src}
           width="100%"
         />
       </GridItem>
@@ -41,7 +43,7 @@ function LatestArticle({Post}) {
           </Text>
 
           <Box>
-            <Image className="LatestArticleImage" />
+            <Image className="LatestArticleImageAuthor" src={Post.user.image.src} />
             <Text className="LatestArticleAuthor">
               By
               <Link as={RouteLink} fontWeight={900} to={"/writers/" + Post.user.username}>
