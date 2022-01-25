@@ -1,4 +1,4 @@
-import {Box, Flex, Heading, Grid, GridItem} from "@chakra-ui/react";
+import {Box, Flex, Heading, Grid, GridItem, Spinner} from "@chakra-ui/react";
 import {v4 as uuid} from "uuid";
 
 import FeaturedArticle from "./FeaturedArticle";
@@ -22,6 +22,15 @@ function FeaturedSection({Posts}) {
             templateRows="1fr"
             width={"100%"}
           >
+            {Posts === undefined && (
+              <Spinner
+                color="blue.500"
+                emptyColor="gray.200"
+                size="xl"
+                speed="0.65s"
+                thickness="8px"
+              />
+            )}
             {Posts !== undefined &&
               Posts.map((post) => {
                 return (

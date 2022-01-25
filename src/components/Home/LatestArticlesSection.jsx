@@ -1,4 +1,4 @@
-import {Flex, Heading, Box} from "@chakra-ui/react";
+import {Flex, Heading, Box, Spinner} from "@chakra-ui/react";
 import {v4 as uuid} from "uuid";
 
 import LatestArticle from "./LatestArticle";
@@ -23,6 +23,15 @@ function LatestsArticles({Posts}) {
             justify={"center"}
             marginTop={10}
           >
+            {Posts === undefined && (
+              <Spinner
+                color="blue.500"
+                emptyColor="gray.200"
+                size="xl"
+                speed="0.65s"
+                thickness="8px"
+              />
+            )}
             {Posts !== undefined &&
               Posts.map((post) => {
                 return <LatestArticle key={uuid()} Post={post} />;

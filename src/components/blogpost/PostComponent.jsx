@@ -13,7 +13,7 @@ function PostComponent({Post}) {
         <Heading fontSize={55} fontWeight={"black"}>
           {Post.title}
         </Heading>
-        <Link as={RouteLink} to={"posts/Un Blog para apuntarse un poroto al Portfolio"}>
+        <Link as={RouteLink} to={"/posts/category/" + Post.category}>
           <Button
             bg={"primary.light"}
             border="2px"
@@ -24,7 +24,7 @@ function PostComponent({Post}) {
             minW="100px"
             position={"inherit"}
           >
-            {Post.Category}
+            {Post.category}
           </Button>
         </Link>
         <Flex

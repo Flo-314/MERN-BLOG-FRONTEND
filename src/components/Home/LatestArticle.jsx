@@ -1,8 +1,6 @@
 import {Box, Link, Image, Text, Grid, Button, GridItem, Flex} from "@chakra-ui/react";
 import {Link as RouteLink} from "react-router-dom";
 function LatestArticle({Post}) {
-  console.log(Post.user);
-
   return (
     <Flex
       className="LatestArticle"
@@ -26,18 +24,20 @@ function LatestArticle({Post}) {
       </Flex>
       <Flex bg="white" className="bottomLatestArticle" direction="column">
         <Box padding={7} paddingBottom={0}>
-          <Button
-            bg={"primary.light"}
-            borderRadius={10}
-            className="LatestArticleCategory"
-            color={"secondary.strong"}
-            fontWeight={900}
-            marginBottom={5}
-            maxHeight={"100%"}
-            position={"inherit"}
-          >
-            {Post.category}
-          </Button>
+          <Link as={RouteLink} to={"/posts/category/" + Post.category}>
+            <Button
+              bg={"primary.light"}
+              borderRadius={10}
+              className="LatestArticleCategory"
+              color={"secondary.strong"}
+              fontWeight={900}
+              marginBottom={5}
+              maxHeight={"100%"}
+              position={"inherit"}
+            >
+              {Post.category}
+            </Button>
+          </Link>
           <Text className="LatestArticleTitle" fontSize={30} fontWeight={"bold"} marginBottom={5}>
             <Link as={RouteLink} to={"/posts/" + Post.title}>
               {Post.title}

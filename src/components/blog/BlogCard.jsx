@@ -29,18 +29,20 @@ function BlogPost({Post}) {
         width={"100%"}
       >
         <Box>
-          <Button
-            bg={"primary.light"}
-            borderRadius={10}
-            className="ArticleCategory"
-            color={"secondary.strong"}
-            fontWeight={900}
-            marginBottom={5}
-            maxHeight={"100%"}
-            position={"inherit"}
-          >
-            {Post.category}
-          </Button>
+          <Link as={RouteLink} to={"/posts/category/" + Post.category}>
+            <Button
+              bg={"primary.light"}
+              borderRadius={10}
+              className="ArticleCategory"
+              color={"secondary.strong"}
+              fontWeight={900}
+              marginBottom={5}
+              maxHeight={"100%"}
+              position={"inherit"}
+            >
+              {Post.category}
+            </Button>
+          </Link>
           <Text className="ArticleTitle" fontSize={30} fontWeight={"bold"} marginBottom={5}>
             <Link as={RouteLink} to={"/posts/" + Post.title}>
               {Post.title}

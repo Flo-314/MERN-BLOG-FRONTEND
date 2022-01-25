@@ -1,4 +1,4 @@
-import {Box, Grid, Flex, GridItem} from "@chakra-ui/react";
+import {Box, Grid, Flex, GridItem, Spinner} from "@chakra-ui/react";
 import {useEffect, useState} from "react";
 import {v4 as uuid} from "uuid";
 
@@ -36,6 +36,15 @@ function Writers() {
             maxHeight={"100%"}
             templateColumns="1fr 1fr 1fr"
           >
+            {Writers === undefined && (
+              <Spinner
+                color="blue.500"
+                emptyColor="gray.200"
+                size="xl"
+                speed="0.65s"
+                thickness="8px"
+              />
+            )}
             {Writers !== undefined &&
               Writers.map((writer) => {
                 return (

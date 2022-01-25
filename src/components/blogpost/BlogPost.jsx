@@ -1,6 +1,6 @@
 import {useParams} from "react-router-dom";
 import {useState, useEffect} from "react";
-import {Box} from "@chakra-ui/react";
+import {Box, Spinner} from "@chakra-ui/react";
 
 import fetchPost from "../../../helperModules/fetchPost";
 
@@ -23,7 +23,19 @@ function BlogPost() {
   return (
     <main>
       <Box maxW={"1500px"} width="80%">
-        <section id="post">{Post !== undefined && <PostComponent Post={Post} />}</section>
+        <section id="post">
+          {Post === undefined && (
+            <Spinner
+              color="blue.500"
+              emptyColor="gray.200"
+              size="xl"
+              speed="0.65s"
+              thickness="8px"
+            />
+          )}
+
+          {Post !== undefined && <PostComponent Post={Post} />}
+        </section>
       </Box>
     </main>
   );

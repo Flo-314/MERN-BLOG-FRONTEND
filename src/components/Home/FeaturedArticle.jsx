@@ -24,18 +24,20 @@ function FeaturedArticle({Post}) {
       </GridItem>
       <GridItem bg="white" className="bottomFeaturedArticle">
         <Box padding={7} paddingBottom={0}>
-          <Button
-            bg={"primary.light"}
-            borderRadius={10}
-            className="FeaturedArticleCategory"
-            color={"secondary.strong"}
-            fontWeight={500}
-            marginBottom={5}
-            maxHeight={"100%"}
-            position={"inherit"}
-          >
-            {Post.category}
-          </Button>
+          <Link as={RouteLink} to={"/posts/category/" + Post.category}>
+            <Button
+              bg={"primary.light"}
+              borderRadius={10}
+              className="FeaturedArticleCategory"
+              color={"secondary.strong"}
+              fontWeight={500}
+              marginBottom={5}
+              maxHeight={"100%"}
+              position={"inherit"}
+            >
+              {Post.category}
+            </Button>
+          </Link>
           <Text className="featuredArticleTitle" fontSize={20} fontWeight={"bold"} marginBottom={5}>
             <Link as={RouteLink} to={"/posts/" + Post.title}>
               {Post.title}
