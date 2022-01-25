@@ -48,17 +48,25 @@ function BlogPost({Post}) {
           </Text>
         </Box>
         <Box justifySelf={"flex-end"}>
-          <Image className="ArticleImage" src={Post.user.image.src} />
-          <Text className="ArticleAuthor">
-            By
-            <Link as={RouteLink} fontWeight={900} to={"/writers/" + Post.user.username}>
-              {Post.user.username}
-            </Link>
-          </Text>
+          <Flex align="center" gap={5} marginBottom="5" marginTop="5">
+            <Image
+              borderRadius={"full"}
+              className="ArticleImage"
+              maxHeight={"75px"}
+              maxWidth={"75px"}
+              src={Post.user.image.src}
+            />
+            <Text className="ArticleAuthor">
+              By{" "}
+              <Link as={RouteLink} fontWeight={900} to={"/writers/" + Post.user.username}>
+                {Post.user.username}
+              </Link>
+            </Text>
+            <Text className="ArticleDate" color={"text.grayer"} fontSize="10">
+              {Post.timestamp}
+            </Text>
+          </Flex>
 
-          <Text className="ArticleDate" color={"text.grayer"} marginBottom={5}>
-            {Post.timestamp}
-          </Text>
           <Text className="ArticleComments" marginBottom={5}>
             <Link as={RouteLink} fontWeight={600} to={"/posts/" + Post.title}>
               {Post.comments /* length */} comments

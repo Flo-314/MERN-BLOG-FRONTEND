@@ -1,28 +1,30 @@
-import {Box, Link, Image, Text, Grid, Button, GridItem} from "@chakra-ui/react";
+import {Box, Link, Image, Text, Grid, Button, GridItem, Flex} from "@chakra-ui/react";
 import {Link as RouteLink} from "react-router-dom";
 function LatestArticle({Post}) {
   console.log(Post.user);
 
   return (
-    <Grid
+    <Flex
       className="LatestArticle"
       direction={"column"}
-      maxHeight={"100%"}
-      maxWidth="1250px"
+      height={"100%"}
+      maxWidth={"750px"}
       templateColumns="1fr"
       templateRows="13fr 6fr"
+      width={"100%"}
     >
-      <GridItem className="TopLatestArticle">
+      <Flex className="TopLatestArticle">
         <Image
           borderRadius={15}
           className="LatestArticleImage"
           height={"100%"}
           maxHeight="655px"
+          minHeight={"350px"}
           src={Post.image.src}
           width="100%"
         />
-      </GridItem>
-      <GridItem bg="white" className="bottomLatestArticle">
+      </Flex>
+      <Flex bg="white" className="bottomLatestArticle" direction="column">
         <Box padding={7} paddingBottom={0}>
           <Button
             bg={"primary.light"}
@@ -42,27 +44,34 @@ function LatestArticle({Post}) {
             </Link>
           </Text>
 
-          <Box>
-            <Image className="LatestArticleImageAuthor" src={Post.user.image.src} />
+          <Flex align="center" className="ColumnMobile" fontSize={20} gap={5} marginBottom={7}>
+            <Image
+              borderRadius={"full"}
+              className="LatestArticleImageAuthor"
+              maxH={"100px"}
+              maxW={"100px"}
+              src={Post.user.image.src}
+            />
             <Text className="LatestArticleAuthor">
-              By
+              By:
               <Link as={RouteLink} fontWeight={900} to={"/writers/" + Post.user.username}>
+                {"  "}
                 {Post.user.username}
               </Link>
             </Text>
 
-            <Text className="LatestArticleDate" color={"text.grayer"} marginBottom={5}>
+            <Text className="LatestArticleDate" color={"text.grayer"}>
               {Post.timestamp}
             </Text>
-            <Text className="LatestArticleComments" marginBottom={5}>
+            <Text className="LatestArticleComments">
               <Link as={RouteLink} fontWeight={600} to={"/posts/" + Post.title}>
                 {Post.comments /* length */} comments
               </Link>
             </Text>
-          </Box>
+          </Flex>
         </Box>
-      </GridItem>
-    </Grid>
+      </Flex>
+    </Flex>
   );
 }
 

@@ -52,6 +52,7 @@ header {
   }
   .ColumnMobile{
     flex-direction: column;
+    justify-content:flex-start;
 }
 .mobileGridRows{
   grid-template-columns: 1fr !important;
