@@ -34,7 +34,7 @@ function Blog() {
             direction={"column"}
             gap={20}
             maxHeight={"100%"}
-            templateColumns="1fr 1fr 1fr"
+            templateColumns={{xl: "1fr 1fr 1fr", lg: "1fr 1fr"}}
           >
             {Posts === undefined && (
               <Spinner

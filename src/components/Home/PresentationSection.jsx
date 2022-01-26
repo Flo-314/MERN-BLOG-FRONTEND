@@ -33,6 +33,7 @@ function Presentation() {
                 border="2px"
                 borderColor="secondary.strong"
                 borderRadius={11}
+                marginBottom={"10"}
                 maxH="3.5em"
                 maxW="320px"
                 minW="250px"

@@ -2,8 +2,6 @@ import {Box, GridItem, Image, Text, Grid, Button, Link} from "@chakra-ui/react";
 import {Link as RouteLink} from "react-router-dom";
 
 function FeaturedArticle({Post}) {
-  console.log(Post);
-
   return (
     <Grid
       className="featuredArticle"
