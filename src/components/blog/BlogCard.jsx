@@ -1,13 +1,15 @@
-import {Box, Link, Image, Text, Button, Flex} from "@chakra-ui/react";
+import {Box, Link, Image, Text, Button, Flex, Grid} from "@chakra-ui/react";
 import {Link as RouteLink} from "react-router-dom";
 
 function BlogPost({Post}) {
   return (
-    <Flex
+    <Grid
       className="LatestArticle"
       direction={"column"}
       flex={"1 auto"}
       height={"100%"}
+      templateColumns={"1fr"}
+      templateRows={{xl: "1fr 1fr", lg: "2fr 1fr"}}
       width={"100%"}
     >
       <Box className="TopArticle" height={"100%"} width={"100%"}>
@@ -29,7 +31,7 @@ function BlogPost({Post}) {
         padding={"5"}
         width={"100%"}
       >
-        <Box>
+        <Box height={"100%"}>
           <Link as={RouteLink} to={"/posts/category/" + Post.category}>
             <Button
               bg={"primary.light"}
@@ -78,7 +80,7 @@ function BlogPost({Post}) {
           </Text>
         </Box>
       </Flex>
-    </Flex>
+    </Grid>
   );
 }
 

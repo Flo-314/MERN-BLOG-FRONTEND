@@ -29,6 +29,18 @@ function Blog() {
           padding={20}
           width={"80%"}
         >
+          {Posts === undefined && (
+            <Spinner
+              color="blue.500"
+              emptyColor="gray.200"
+              marginLeft={40}
+              position="static"
+              size="xl"
+              speed="0.65s"
+              thickness="8px"
+            />
+          )}
+
           <Grid
             className="mobileGridRows"
             direction={"column"}
@@ -36,18 +48,6 @@ function Blog() {
             maxHeight={"100%"}
             templateColumns={{xl: "1fr 1fr 1fr", lg: "1fr 1fr"}}
           >
-            {Posts === undefined && (
-              <Spinner
-                color="blue.500"
-                emptyColor="gray.200"
-                margin="0 auto"
-                position="static"
-                size="xl"
-                speed="0.65s"
-                thickness="8px"
-              />
-            )}
-
             {Posts !== undefined &&
               Posts.map((post) => {
                 return (

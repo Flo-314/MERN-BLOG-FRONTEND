@@ -29,6 +29,15 @@ function Writers() {
           padding={20}
           width={"80%"}
         >
+          {Writers === undefined && (
+            <Spinner
+              color="blue.500"
+              emptyColor="gray.200"
+              size="xl"
+              speed="0.65s"
+              thickness="8px"
+            />
+          )}
           <Grid
             className="mobileGridRows"
             direction={"column"}
@@ -36,15 +45,6 @@ function Writers() {
             maxHeight={"100%"}
             templateColumns="1fr 1fr 1fr"
           >
-            {Writers === undefined && (
-              <Spinner
-                color="blue.500"
-                emptyColor="gray.200"
-                size="xl"
-                speed="0.65s"
-                thickness="8px"
-              />
-            )}
             {Writers !== undefined &&
               Writers.map((writer) => {
                 return (
