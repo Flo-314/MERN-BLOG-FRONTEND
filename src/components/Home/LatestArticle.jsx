@@ -60,7 +60,7 @@ function LatestArticle({Post}) {
               </Link>
             </Text>
 
-            <Text className="LatestArticleDate" color={"text.grayer"}>
+            <Text className="LatestArticleDate" color={"text.grayer"} fontWeight={600}>
               {Post.timestamp}
             </Text>
             <Text className="LatestArticleComments">
