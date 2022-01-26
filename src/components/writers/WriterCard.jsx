@@ -15,7 +15,7 @@ function WriterCard({Writer}) {
       </Box>
       <Flex padding={5} width={"100%"}>
         <Heading>
-          <Link as={RouteLink} fontSize={40} to={"/writers/" + Writer.username}>
+          <Link as={RouteLink} fontSize={40} to={"/writers/" + Writer._id}>
             {Writer.username}
           </Link>
         </Heading>

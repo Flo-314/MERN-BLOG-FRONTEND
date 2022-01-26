@@ -40,6 +40,8 @@ function Blog() {
               <Spinner
                 color="blue.500"
                 emptyColor="gray.200"
+                margin="0 auto"
+                position="static"
                 size="xl"
                 speed="0.65s"
                 thickness="8px"

@@ -60,7 +60,7 @@ function BlogPost({Post}) {
             />
             <Text className="ArticleAuthor">
               By{" "}
-              <Link as={RouteLink} fontWeight={900} to={"/writers/" + Post.user.username}>
+              <Link as={RouteLink} fontWeight={900} to={"/writers/" + Post.user._id}>
                 {Post.user.username}
               </Link>
             </Text>

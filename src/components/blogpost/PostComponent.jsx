@@ -1,4 +1,4 @@
-import {Box, Image, Text, Flex, Heading, Link, Button} from "@chakra-ui/react";
+import {Box, Image, Text, Flex, Heading, Link, Button, Container} from "@chakra-ui/react";
 import {Link as RouteLink} from "react-router-dom";
 
 function PostComponent({Post}) {
@@ -7,18 +7,17 @@ function PostComponent({Post}) {
   }
 
   return (
-    <Flex alignItems={"center"} direction={"column"} padding={20}>
-      <Box>
+    <Flex direction={"column"} justify="center" width={"100%"}>
+      <Flex direction="column">
         <Text fontSize={15}>{Post.timestamp}</Text>
-        <Heading fontSize={55} fontWeight={"black"}>
-          {Post.title}
-        </Heading>
+        <Heading fontWeight={"black"}>{Post.title}</Heading>
         <Link as={RouteLink} to={"/posts/category/" + Post.category}>
           <Button
             bg={"primary.light"}
             border="2px"
             borderColor="secondary.strong"
             borderRadius={11}
+            marginTop={5}
             maxH="2em"
             maxW="150px"
             minW="100px"
@@ -32,22 +31,28 @@ function PostComponent({Post}) {
           border="2px"
           borderColor="secondary.strong"
           borderRadius={11}
+          gap={5}
           marginBottom="5"
           marginTop="5"
           padding={"2"}
           width="fit-content"
         >
-          <Image borderRadius={10} src={Post.image.src} />
+          <Image borderRadius={10} maxWidth={"75px"} src={Post.user.image.src} />
           <Box fontSize="18">
-            <Text fontWeight={"bold"}>{Post.user.username}</Text>
-            <Text fontWeight={"semibold"}>Editor</Text>
+            <Link as={RouteLink} to={"/writers/" + Post.user._id}>
+              <Text fontWeight={"bold"}>{Post.user.username}</Text>
+            </Link>
+
+            <Text fontWeight={"500"}>Editor</Text>
           </Box>
         </Flex>
-        <Image src={Post.user.image.src} />
-        <article>
+      </Flex>
+      <Image />
+      <article>
+        <Container>
           <Text dangerouslySetInnerHTML={createMarkup()} fontSize="16" fontWeight={600} />
-        </article>
-      </Box>
+        </Container>
+      </article>
     </Flex>
   );
 }

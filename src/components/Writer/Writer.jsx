@@ -10,7 +10,6 @@ function Writer() {
   const [Posts, SetPosts] = useState();
   let id = useParams().id;
 
-  console.log(Posts);
   const getWriterPosts = async () => {
     const posts = await fetchWriter(id);
 

@@ -7,8 +7,6 @@ function LatestArticle({Post}) {
       direction={"column"}
       height={"100%"}
       maxWidth={"750px"}
-      templateColumns="1fr"
-      templateRows="13fr 6fr"
       width={"100%"}
     >
       <Flex className="TopLatestArticle">
@@ -54,7 +52,7 @@ function LatestArticle({Post}) {
             />
             <Text className="LatestArticleAuthor">
               By:
-              <Link as={RouteLink} fontWeight={900} to={"/writers/" + Post.user.username}>
+              <Link as={RouteLink} fontWeight={900} to={"/writers/" + Post.user._id}>
                 {"  "}
                 {Post.user.username}
               </Link>

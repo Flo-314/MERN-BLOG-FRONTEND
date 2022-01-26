@@ -2,11 +2,13 @@ import {Box, GridItem, Image, Text, Grid, Button, Link} from "@chakra-ui/react";
 import {Link as RouteLink} from "react-router-dom";
 
 function FeaturedArticle({Post}) {
+  console.log(Post);
+
   return (
     <Grid
       className="featuredArticle"
       direction={"column"}
-      maxHeight={"625px"}
+      height={"100%"}
       maxWidth="375px"
       templateColumns="1fr"
       templateRows="3fr 2fr"

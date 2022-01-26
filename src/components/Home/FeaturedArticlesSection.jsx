@@ -8,6 +8,7 @@ function FeaturedSection({Posts}) {
       <Box bg={"white"} marginTop={10} paddingTop="250">
         <Flex
           direction={"column"}
+          justify={"center"}
           margin={"0 auto"}
           maxW={"1500px"}
           paddingBottom={40}
@@ -15,6 +16,17 @@ function FeaturedSection({Posts}) {
         >
           <Heading marginBottom={"3"}>Featured Articles </Heading>
           <hr className="strongLine" />
+          {Posts === undefined && (
+            <Spinner
+              color="blue.500"
+              emptyColor="gray.200"
+              margin="0 auto"
+              position="static"
+              size="xl"
+              speed="0.65s"
+              thickness="8px"
+            />
+          )}
           <Grid
             className="mobileGridRows"
             gap={10}
@@ -22,15 +34,6 @@ function FeaturedSection({Posts}) {
             templateRows="1fr"
             width={"100%"}
           >
-            {Posts === undefined && (
-              <Spinner
-                color="blue.500"
-                emptyColor="gray.200"
-                size="xl"
-                speed="0.65s"
-                thickness="8px"
-              />
-            )}
             {Posts !== undefined &&
               Posts.map((post) => {
                 return (

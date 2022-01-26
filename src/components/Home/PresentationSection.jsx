@@ -24,9 +24,8 @@ function Presentation() {
               </Link>
             </Heading>
             <Text paddingBottom={10}>
-              Un Blog para apuntarse un poroto al Portfolio Eveniet dignissimos fugit, architecto
-              velit, porro laborum optio, quibusdam debitis iusto sequi dolorum assumenda
-              necessitatibus accusantium quisquam eum ex sit quidem doloribus.
+              FRONTEND FOR USER / FRONTEND FOR ADMINS MADE WITH: React, React Router, Chakra Ui.
+              REST API MADE WITH: Node.js, Express.js, Passport, JWT token Authentication Lorem
             </Text>
             <Link as={RouteLink} to={"/about"}>
               <Button
@@ -39,7 +38,7 @@ function Presentation() {
                 minW="250px"
                 position={"inherit"}
               >
-                Read More
+                About This
               </Button>
             </Link>
           </Flex>

@@ -6,11 +6,15 @@ import FeaturedSection from "./FeaturedArticlesSection";
 import PresentationSection from "./PresentationSection";
 import LatestsArticles from "./LatestArticlesSection";
 function Home() {
-  const [Posts, SetPosts] = useState();
+  const [recentPosts, SetRecentPosts] = useState();
+  const [featuredPosts, SetFeaturedPosts] = useState();
   const getPosts = async () => {
-    const posts = await fetchPosts();
+    let posts = await fetchPosts();
 
-    SetPosts(posts.posts);
+    posts = posts.posts;
+    SetFeaturedPosts(posts.slice(0, 3));
+
+    SetRecentPosts(posts.slice(-4));
   };
 
   useEffect(() => {
@@ -20,8 +24,8 @@ function Home() {
   return (
     <main>
       <PresentationSection />
-      <FeaturedSection Posts={Posts} />
-      <LatestsArticles Posts={Posts} />
+      <FeaturedSection Posts={featuredPosts} />
+      <LatestsArticles Posts={recentPosts} />
     </main>
   );
 }
