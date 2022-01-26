@@ -14,6 +14,7 @@ function FeaturedArticle({Post}) {
     >
       <GridItem className="TopFeaturedArticle">
         <Image
+          alt="Article Photo"
           borderRadius={15}
           className="featuredArticleImage"
           height={"100%"}
@@ -30,7 +31,7 @@ function FeaturedArticle({Post}) {
               borderRadius={10}
               className="FeaturedArticleCategory"
               color={"secondary.strong"}
-              fontWeight={500}
+              fontWeight={900}
               marginBottom={5}
               maxHeight={"100%"}
               position={"inherit"}
@@ -44,7 +45,12 @@ function FeaturedArticle({Post}) {
             </Link>
           </Text>
 
-          <Text className="featuredArticleDate" color={"text.grayer"} marginBottom={5}>
+          <Text
+            className="featuredArticleDate"
+            color={"text.grayer"}
+            fontWeight={600}
+            marginBottom={5}
+          >
             {Post.timestamp}
           </Text>
         </Box>

@@ -15,7 +15,7 @@ function Presentation() {
           width={"80%"}
         >
           <Flex direction={"column"} marginTop="5em">
-            <Text color={"text.grayer"} fontSize={18}>
+            <Text color={"#756d68"} fontSize={18}>
               Blog para complementar la REST API de Express.js y mongoDB
             </Text>
             <Heading fontSize={55} fontWeight={"black"} paddingBottom={7} paddingTop={3}>
@@ -23,7 +23,7 @@ function Presentation() {
                 Un Blog para apuntarse un poroto al Portfolio
               </Link>
             </Heading>
-            <Text paddingBottom={10}>
+            <Text fontWeight={600} paddingBottom={10}>
               FRONTEND FOR USER / FRONTEND FOR ADMINS MADE WITH: React, React Router, Chakra Ui.
               REST API MADE WITH: Node.js, Express.js, Passport, JWT token Authentication Lorem
             </Text>
@@ -47,6 +47,7 @@ function Presentation() {
           <Flex marginTop="2em">
             <Link as={RouteLink} to={"/about"}>
               <Image
+                alt="Gauchito goncy"
                 borderRadius={20}
                 height={"110%"}
                 maxHeight={"1100px"}

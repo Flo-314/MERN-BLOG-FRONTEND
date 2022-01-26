@@ -12,6 +12,7 @@ function BlogPost({Post}) {
     >
       <Box className="TopArticle" height={"100%"} width={"100%"}>
         <Image
+          alt="Blog image"
           borderRadius={15}
           className="ArticleImage"
           height="100%"
@@ -52,6 +53,7 @@ function BlogPost({Post}) {
         <Box justifySelf={"flex-end"}>
           <Flex align="center" gap={5} marginBottom="5" marginTop="5">
             <Image
+              alt="Writer of post Image"
               borderRadius={"full"}
               className="ArticleImage"
               maxHeight={"75px"}

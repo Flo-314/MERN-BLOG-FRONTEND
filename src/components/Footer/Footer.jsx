@@ -5,7 +5,7 @@ import {Link as RouteLink} from "react-router-dom";
 function Footer() {
   return (
     <footer>
-      <Box bg={"secondary.light"}>
+      <Box bg={"#b28d70"}>
         <Flex
           alignItems={"center"}
           color={"white"}

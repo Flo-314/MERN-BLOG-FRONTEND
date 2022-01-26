@@ -11,8 +11,8 @@ const theme = extendTheme({
       light: "#C9A285",
     },
     text: {
-      gray: "#E0E0E0",
-      grayer: "#A6A3A2",
+      gray: "#949494",
+      grayer: "#767676",
     },
   },
 });

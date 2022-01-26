@@ -11,6 +11,7 @@ function LatestArticle({Post}) {
     >
       <Flex className="TopLatestArticle">
         <Image
+          alt="Post Image"
           borderRadius={15}
           className="LatestArticleImage"
           height={"100%"}
@@ -44,6 +45,7 @@ function LatestArticle({Post}) {
 
           <Flex align="center" className="ColumnMobile" fontSize={20} gap={5} marginBottom={7}>
             <Image
+              alt="Writer of Post Image"
               borderRadius={"full"}
               className="LatestArticleImageAuthor"
               maxH={"100px"}

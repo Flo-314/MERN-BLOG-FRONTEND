@@ -37,7 +37,12 @@ function PostComponent({Post}) {
           padding={"2"}
           width="fit-content"
         >
-          <Image borderRadius={10} maxWidth={"75px"} src={Post.user.image.src} />
+          <Image
+            alt="writer of post image"
+            borderRadius={10}
+            maxWidth={"75px"}
+            src={Post.user.image.src}
+          />
           <Box fontSize="18">
             <Link as={RouteLink} to={"/writers/" + Post.user._id}>
               <Text fontWeight={"bold"}>{Post.user.username}</Text>
