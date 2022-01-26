@@ -19,7 +19,6 @@ function BlogPost() {
   useEffect(() => {
     getPost();
   }, []);
-  console.log(Post);
 
   return (
     <main>
