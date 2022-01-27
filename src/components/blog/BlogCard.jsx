@@ -13,14 +13,16 @@ function BlogCard({category, comments, image, timestamp, title, user, _id}) {
       width={"100%"}
     >
       <Box className="TopArticle" height={"100%"} width={"100%"}>
-        <Image
-          alt="Blog image"
-          borderRadius={15}
-          className="ArticleImage"
-          height="100%"
-          src={image.src}
-          width="100%"
-        />
+        <Link as={RouteLink} to={"/posts/" + title}>
+          <Image
+            alt="Blog image"
+            borderRadius={15}
+            className="ArticleImage"
+            height="100%"
+            src={image.src}
+            width="100%"
+          />
+        </Link>
       </Box>
 
       <Flex
@@ -54,14 +56,17 @@ function BlogCard({category, comments, image, timestamp, title, user, _id}) {
         </Box>
         <Box justifySelf={"flex-end"}>
           <Flex align="center" gap={5} marginBottom="5" marginTop="5">
-            <Image
-              alt="Writer of post Image"
-              borderRadius={"full"}
-              className="ArticleImage"
-              maxHeight={"75px"}
-              maxWidth={"75px"}
-              src={user.image.src}
-            />
+            <Link as={RouteLink} to={"/posts/" + title}>
+              <Image
+                alt="Writer of post Image"
+                borderRadius={"full"}
+                className="ArticleImage"
+                maxHeight={"75px"}
+                maxWidth={"75px"}
+                src={user.image.src}
+              />
+            </Link>
+
             <Text className="ArticleAuthor">
               By{" "}
               <Link as={RouteLink} fontWeight={900} to={"/writers/" + user._id}>

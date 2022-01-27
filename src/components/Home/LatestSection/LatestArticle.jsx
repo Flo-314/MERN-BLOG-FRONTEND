@@ -9,18 +9,21 @@ function LatestArticle({Post}) {
       maxWidth={"750px"}
       width={"100%"}
     >
-      <Flex className="TopLatestArticle">
-        <Image
-          alt="Post Image"
-          borderRadius={15}
-          className="LatestArticleImage"
-          height={"100%"}
-          maxHeight="655px"
-          minHeight={"350px"}
-          src={Post.image.src}
-          width="100%"
-        />
-      </Flex>
+      <Link as={RouteLink} to={"/posts/" + Post.title}>
+        <Flex className="TopLatestArticle">
+          <Image
+            alt="Post Image"
+            borderRadius={15}
+            className="LatestArticleImage"
+            height={"100%"}
+            maxHeight="655px"
+            minHeight={"350px"}
+            src={Post.image.src}
+            width="100%"
+          />
+        </Flex>
+      </Link>
+
       <Flex bg="white" className="bottomLatestArticle" direction="column">
         <Box padding={7} paddingBottom={0}>
           <Link as={RouteLink} to={"/posts/category/" + Post.category}>

@@ -5,7 +5,9 @@ function WriterCard({image, username, _id}) {
   return (
     <Flex className="boxShadow" direction={"column"} flex={"1 auto"} height={"100%"} width={"100%"}>
       <Box height={"100%"} width="100%">
-        <Image alt="WriterPhoto" borderRadius={20} height="100%" src={image.src} width="100%" />
+        <Link as={RouteLink} fontSize={40} to={"/writers/" + _id}>
+          <Image alt="WriterPhoto" borderRadius={20} height="100%" src={image.src} width="100%" />
+        </Link>
       </Box>
       <Flex padding={5} width={"100%"}>
         <Heading>

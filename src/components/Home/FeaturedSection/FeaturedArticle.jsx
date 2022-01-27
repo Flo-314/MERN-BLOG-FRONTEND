@@ -13,15 +13,17 @@ function FeaturedArticle({Post}) {
       width="100%"
     >
       <GridItem className="TopFeaturedArticle">
-        <Image
-          alt="Article Photo"
-          borderRadius={15}
-          className="featuredArticleImage"
-          height={"100%"}
-          maxHeight="375px"
-          src={Post.image.src}
-          width="100%"
-        />
+        <Link as={RouteLink} to={"/posts/" + Post.title}>
+          <Image
+            alt="Article Photo"
+            borderRadius={15}
+            className="featuredArticleImage"
+            height={"100%"}
+            maxHeight="375px"
+            src={Post.image.src}
+            width="100%"
+          />
+        </Link>
       </GridItem>
       <GridItem bg="white" className="bottomFeaturedArticle">
         <Box padding={7} paddingBottom={0}>
