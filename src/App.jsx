@@ -2,8 +2,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import {ChakraProvider} from "@chakra-ui/react";
 
 import "./App.css";
-import theme from "../Theme";
-
+import theme from "./styles/Theme";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import About from "./components/about/About";
@@ -18,8 +17,9 @@ function App() {
     <BrowserRouter>
       <ChakraProvider theme={theme}>
         <Header />
+
         <Routes>
-          <Route element={<Home />} path="/" />
+          <Route exact element={<Home />} path="/" />
           <Route element={<About />} path="/about" />
           <Route element={<Blog />} path="/posts" />
           <Route element={<Category />} path="/posts/category/:id" />

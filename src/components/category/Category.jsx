@@ -3,21 +3,23 @@ import {useEffect, useRef, useState} from "react";
 import {useParams} from "react-router-dom";
 import {v4 as uuid} from "uuid";
 
-import fetchCategory from "../../../helperModules/fetchCategory";
-import BlogPost from "../blog/BlogCard";
+import fetchApi from "../../helperModules/fetchApi";
+import BlogCard from "../blog/BlogCard";
 
 function Category() {
   const [Posts, SetPosts] = useState();
   const category = useParams();
-  const getPosts = async () => {
-    const posts = await fetchCategory(category.id);
-
-    SetPosts(posts.posts);
-  };
 
   useEffect(() => {
+    const getPosts = async () => {
+      const path = "category";
+      const posts = await fetchApi(path, category.id);
+
+      SetPosts(posts.posts);
+    };
+
     getPosts();
-  }, []);
+  }, [category.id]);
 
   return (
     <main>
@@ -51,7 +53,7 @@ function Category() {
               Posts.map((post) => {
                 return (
                   <GridItem key={uuid()} height={"100%"} justifySelf={"stretch"} width={"100%"}>
-                    <BlogPost Post={post} />
+                    <BlogCard {...post} />
                   </GridItem>
                 );
               })}

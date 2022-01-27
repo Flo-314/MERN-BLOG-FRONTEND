@@ -2,19 +2,21 @@ import {Box, Grid, Flex, GridItem, Spinner} from "@chakra-ui/react";
 import {useEffect, useState} from "react";
 import {v4 as uuid} from "uuid";
 
-import fetchWriters from "../../../helperModules/fetchWriters";
+import fetchApi from "../../helperModules/fetchApi";
 
 import WriterCard from "./WriterCard";
 
 function Writers() {
   const [Writers, SetWriters] = useState();
-  const getWriters = async () => {
-    const writers = await fetchWriters();
-
-    SetWriters(writers.writers);
-  };
 
   useEffect(() => {
+    const getWriters = async () => {
+      const path = "writers";
+      const writers = await fetchApi(path);
+
+      SetWriters(writers.writers);
+    };
+
     getWriters();
   }, []);
 
@@ -45,11 +47,11 @@ function Writers() {
             maxHeight={"100%"}
             templateColumns="1fr 1fr 1fr"
           >
-            {Writers !== undefined &&
-              Writers.map((writer) => {
+            {Writers &&
+              Writers.map((Writer) => {
                 return (
                   <GridItem key={uuid()} height={"100%"} justifySelf={"stretch"} width={"100%"}>
-                    <WriterCard Writer={writer} />
+                    <WriterCard {...Writer} />
                   </GridItem>
                 );
               })}

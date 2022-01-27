@@ -1,13 +1,7 @@
 import {Flex, Heading, Text, Link, Container} from "@chakra-ui/react";
 import {useEffect, useState} from "react";
 
-import fetchPost from "../../../helperModules/fetchPost";
-
 function About() {
-  useEffect(() => {
-    fetchPost();
-  }, []);
-
   return (
     <Flex direction={"column"} justify={"center"} minH={"70vh"} padding="20">
       <Heading fontSize={60}>JUST THE FRONT END OF A BLOG USING:</Heading>
@@ -55,7 +49,7 @@ function About() {
           <li>All the post of X writer</li>
           <li>All the WRiters</li>
           <li>All the post of X category</li>
-          <li>Specefic post</li>
+          <li>specific post</li>
         </ul>
 
         <Text fontWeight={"black"} marginTop={10}>

@@ -44,12 +44,12 @@ function Footer() {
           </nav>
           <hr />
           <Box alignSelf={"flex-start"} paddingBottom={10} paddingTop={10}>
-            <Text fontWeight={"black"}>Blog create to complement the Rest api that i made. </Text>
+            <Text fontWeight={"700"}>Blog create to complement the Rest api that i made. </Text>
 
             <Text fontSize={25} fontWeight={"bold"}>
-              <a href="https://github.com/Flo-314">
+              <Link href="https://github.com/Flo-314">
                 My Github <LogoGithubIcon />
-              </a>
+              </Link>
             </Text>
           </Box>
         </Flex>

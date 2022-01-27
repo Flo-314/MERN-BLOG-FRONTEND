@@ -1,17 +1,17 @@
 import {Box, Image, Text, Flex, Heading, Link, Button, Container} from "@chakra-ui/react";
 import {Link as RouteLink} from "react-router-dom";
 
-function PostComponent({Post}) {
+function PostComponent({category, image, content, timestamp, title, user, _id}) {
   function createMarkup() {
-    return {__html: Post.content};
+    return {__html: content};
   }
 
   return (
     <Flex direction={"column"} justify="center" width={"100%"}>
       <Flex direction="column">
-        <Text fontSize={15}>{Post.timestamp}</Text>
-        <Heading fontWeight={"black"}>{Post.title}</Heading>
-        <Link as={RouteLink} to={"/posts/category/" + Post.category}>
+        <Text fontSize={15}>{timestamp}</Text>
+        <Heading fontWeight={"black"}>{title}</Heading>
+        <Link as={RouteLink} to={"/posts/category/" + category}>
           <Button
             bg={"primary.light"}
             border="2px"
@@ -23,7 +23,7 @@ function PostComponent({Post}) {
             minW="100px"
             position={"inherit"}
           >
-            {Post.category}
+            {category}
           </Button>
         </Link>
         <Flex
@@ -41,18 +41,18 @@ function PostComponent({Post}) {
             alt="writer of post image"
             borderRadius={10}
             maxWidth={"75px"}
-            src={Post.user.image.src}
+            src={user.image.src}
           />
           <Box fontSize="18">
-            <Link as={RouteLink} to={"/writers/" + Post.user._id}>
-              <Text fontWeight={"bold"}>{Post.user.username}</Text>
+            <Link as={RouteLink} to={"/writers/" + user._id}>
+              <Text fontWeight={"bold"}>{user.username}</Text>
             </Link>
 
             <Text fontWeight={"500"}>Editor</Text>
           </Box>
         </Flex>
       </Flex>
-      <Image />
+      <Image src={image.src} />
       <article>
         <Container>
           <Text dangerouslySetInnerHTML={createMarkup()} fontSize="16" fontWeight={600} />

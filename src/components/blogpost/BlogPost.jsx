@@ -2,7 +2,7 @@ import {useParams} from "react-router-dom";
 import {useState, useEffect} from "react";
 import {Box, Spinner, Flex} from "@chakra-ui/react";
 
-import fetchPost from "../../../helperModules/fetchPost";
+import fetchApi from "../../helperModules/fetchApi";
 
 import PostComponent from "./PostComponent";
 
@@ -10,15 +10,16 @@ function BlogPost() {
   const [Post, SetPost] = useState();
   let id = useParams().id;
 
-  const getPost = async () => {
-    let post = await fetchPost(id);
-
-    SetPost(post);
-  };
-
   useEffect(() => {
+    const getPost = async () => {
+      const path = "posts";
+      let post = await fetchApi(path, id);
+
+      SetPost(post.post);
+    };
+
     getPost();
-  }, []);
+  }, [id]);
 
   return (
     <main>
@@ -45,7 +46,7 @@ function BlogPost() {
               />
             )}
 
-            {Post !== undefined && <PostComponent Post={Post} />}
+            {Post && <PostComponent {...Post} />}
           </section>
         </Flex>
       </Box>

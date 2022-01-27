@@ -23,65 +23,57 @@ function Nav() {
             <MenuList bg={"primary.light"}>
               <li>
                 <MenuItem>
-                  <h3>
-                    <Link
-                      as={RouteLink}
-                      className="primaryStrong"
-                      color={"primary.strong"}
-                      fontSize={23}
-                      fontWeight={"bold"}
-                      to={"/"}
-                    >
-                      Home
-                    </Link>
-                  </h3>
+                  <Link
+                    as={RouteLink}
+                    className="primaryStrong"
+                    color={"primary.strong"}
+                    fontSize={23}
+                    fontWeight={"bold"}
+                    to={"/"}
+                  >
+                    Home
+                  </Link>
                 </MenuItem>
               </li>
               <li>
                 <MenuItem>
-                  <h3>
-                    <Link
-                      as={RouteLink}
-                      className="primaryStrong"
-                      color={"primary.strong"}
-                      fontSize={23}
-                      fontWeight={"bold"}
-                      to={"/about"}
-                    >
-                      About
-                    </Link>
-                  </h3>
+                  <Link
+                    as={RouteLink}
+                    className="primaryStrong"
+                    color={"primary.strong"}
+                    fontSize={23}
+                    fontWeight={"bold"}
+                    to={"/about"}
+                  >
+                    About
+                  </Link>
                 </MenuItem>
               </li>
               <li>
                 <MenuItem>
-                  <h3>
-                    <Link
-                      as={RouteLink}
-                      className="primaryStrong"
-                      color={"primary.strong"}
-                      fontSize={23}
-                      fontWeight={"bold"}
-                      to={"/posts"}
-                    >
-                      Blog
-                    </Link>
-                  </h3>
+                  <Link
+                    as={RouteLink}
+                    className="primaryStrong"
+                    color={"primary.strong"}
+                    fontSize={23}
+                    fontWeight={"bold"}
+                    to={"/posts"}
+                  >
+                    Blog
+                  </Link>
                 </MenuItem>
               </li>
               <li>
                 <MenuItem>
-                  <h3>
-                    <Link
-                      as={RouteLink}
-                      color={"primary.strong"}
-                      fontSize={23}
-                      fontWeight={"bold"}
-                      to={"/writers"}
-                    >
-                      Our Writers
-                    </Link>
-                  </h3>
+                  <Link
+                    as={RouteLink}
+                    color={"primary.strong"}
+                    fontSize={23}
+                    fontWeight={"bold"}
+                    to={"/writers"}
+                  >
+                    Our Writers
+                  </Link>
                 </MenuItem>
               </li>
             </MenuList>
@@ -95,32 +87,24 @@ function Nav() {
           gap={10}
         >
           <li>
-            <h3>
-              <Link as={RouteLink} to={"/"}>
-                Home
-              </Link>
-            </h3>
+            <Link as={RouteLink} to={"/"}>
+              Home
+            </Link>
           </li>
           <li>
-            <h3>
-              <Link as={RouteLink} to={"/about"}>
-                About
-              </Link>
-            </h3>
+            <Link as={RouteLink} to={"/about"}>
+              About
+            </Link>
           </li>
           <li>
-            <h3>
-              <Link as={RouteLink} to={"/posts"}>
-                Blog
-              </Link>
-            </h3>
+            <Link as={RouteLink} to={"/posts"}>
+              Blog
+            </Link>
           </li>
           <li>
-            <h3>
-              <Link as={RouteLink} to={"/writers"}>
-                Our Writers
-              </Link>
-            </h3>
+            <Link as={RouteLink} to={"/writers"}>
+              Our Writers
+            </Link>
           </li>
         </Flex>
       </ul>

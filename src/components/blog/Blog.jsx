@@ -2,14 +2,15 @@ import {Box, Grid, Flex, GridItem, Spinner} from "@chakra-ui/react";
 import {useEffect, useState} from "react";
 import {v4 as uuid} from "uuid";
 
-import fetchPosts from "../../../helperModules/fetchPosts";
+import fetchApi from "../../helperModules/fetchApi";
 
-import BlogPost from "./BlogCard";
+import BlogCard from "./BlogCard";
 
 function Blog() {
   const [Posts, SetPosts] = useState();
   const getPosts = async () => {
-    const posts = await fetchPosts();
+    const path = "posts";
+    const posts = await fetchApi(path);
 
     SetPosts(posts.posts);
   };
@@ -48,11 +49,11 @@ function Blog() {
             maxHeight={"100%"}
             templateColumns={{xl: "1fr 1fr 1fr", lg: "1fr 1fr"}}
           >
-            {Posts !== undefined &&
+            {Posts &&
               Posts.map((post) => {
                 return (
                   <GridItem key={uuid()} height={"100%"} justifySelf={"stretch"} width={"100%"}>
-                    <BlogPost Post={post} />
+                    <BlogCard {...post} />
                   </GridItem>
                 );
               })}

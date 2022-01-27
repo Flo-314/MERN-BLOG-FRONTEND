@@ -3,22 +3,23 @@ import {useEffect, useState} from "react";
 import {v4 as uuid} from "uuid";
 import {useParams} from "react-router-dom";
 
-import fetchWriter from "../../../helperModules/fetchWriter";
-import BlogPost from "../blog/BlogCard";
+import fetchApi from "../../helperModules/fetchApi";
+import BlogCard from "../blog/BlogCard";
 
 function Writer() {
   const [Posts, SetPosts] = useState();
   let id = useParams().id;
 
-  const getWriterPosts = async () => {
-    const posts = await fetchWriter(id);
-
-    SetPosts(posts.posts);
-  };
-
   useEffect(() => {
+    const getWriterPosts = async () => {
+      const path = "writers";
+      const posts = await fetchApi(path, id);
+
+      SetPosts(posts.posts);
+    };
+
     getWriterPosts();
-  }, []);
+  }, [id]);
 
   return (
     <main>
@@ -54,11 +55,11 @@ function Writer() {
                 thickness="8px"
               />
             )}
-            {Posts !== undefined &&
-              Posts.map((post) => {
+            {Posts &&
+              Posts.map((Post) => {
                 return (
                   <GridItem key={uuid()} height={"100%"} justifySelf={"stretch"} width={"100%"}>
-                    <BlogPost Post={post} />
+                    <BlogCard {...Post} />
                   </GridItem>
                 );
               })}
